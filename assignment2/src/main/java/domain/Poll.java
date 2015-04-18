@@ -22,6 +22,9 @@ public class Poll {
 
     private int results[];
 
+    @JsonIgnore
+    boolean emailSent=false;
+
 
 
     @JsonIgnore
@@ -81,4 +84,13 @@ public class Poll {
     public void setModeratorId(int moderatorId) {
         this.moderatorId = moderatorId;
     }
+
+    public boolean isEmailSent() {
+        return emailSent;
+    }
+
+    public void setEmailSent(boolean emailSent) {
+        this.emailSent = emailSent;
+    }
+
 }
