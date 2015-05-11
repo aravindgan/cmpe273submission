@@ -227,6 +227,7 @@ public class ModeratorController {
     }
 
     public void checkForExpiredPolls() {
+	SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
         ArrayList<Poll> pollList = (ArrayList<Poll>) pollRepository.findAll();
         Date dbDate = null;
         Date currentDate = new Date();
@@ -236,7 +237,7 @@ public class ModeratorController {
             Moderator moderator = moderatorRespository.findById(currentPoll.getModeratorId());
 
             try {
-                dbDate = sdf.parse(expiredDate);
+                dbDate = sdf2.parse(expiredDate);
             } catch (ParseException e) {
 // TODO Auto-generated catch block
                 e.printStackTrace();

@@ -15,7 +15,7 @@ public class SchedulerConf {
     @Autowired
     ModeratorController serviceObj;
 
-    @Scheduled(fixedRate = 5000)
+   @Scheduled(fixedRate = 30000)
     public void messageScheduler()
     {
         System.out.println("Scheduler Started");
